@@ -23,4 +23,3 @@ def draw_menu(request, menu_slug):
     menu = Menu.objects.get(slug=menu_slug)
     menu_items = MenuItem.objects.filter(menu=menu)
     return render(request, 'menu_app/menu.html', {'menu': menu, 'menu_items': menu_items})
-

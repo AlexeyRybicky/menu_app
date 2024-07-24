@@ -21,7 +21,7 @@ class Menu(models.Model):
         verbose_name_plural = 'Меню'
 
     # pylint: disable=E1101
-    def __str__(self):
+    def __str__(self) -> str:
         return self.name
 
 
@@ -53,10 +53,10 @@ class MenuItem(models.Model):
         verbose_name_plural = 'Элементы меню'
 
     # pylint: disable=E1101
-    def __str__(self):
+    def __str__(self) -> str:
         return self.title
 
-    def get_children(self):
+    def get_children(self) -> models.QuerySet:
         """
         Метод для получения всех дочерних элементов текущего элемента меню.
         """
