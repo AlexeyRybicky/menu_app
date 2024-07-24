@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% load menu_tags %}
+
+{% block content %}
+    <h1>Отображение меню</h1>
+    {% for menu_slug in menu_slugs %}
+        {% draw_menu menu_slug %}
+    {% endfor %}
+{% endblock %}
