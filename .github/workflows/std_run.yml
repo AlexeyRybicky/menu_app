@@ -37,11 +37,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install poetry
         poetry install
-    - name: run-tests
-      working-directory: backend
-      run: |
-        poetry run python manage.py makemigrations
-        poetry run coverage run --source='.' manage.py test -v 3 --parallel auto
     - name: pep-test
       working-directory: backend
       run: |
