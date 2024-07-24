@@ -1,0 +1,12 @@
+<ul>
+{% for child in items %}
+    <li>
+        <a href="{% if child.named_url %}{% else %}{{ child.url }}{% endif %}">
+            {{ child.title }}
+        </a>
+        {% if child.get_children %}
+            {% include 'menu_app/menu_item.html' with items=child.get_children %}
+        {% endif %}
+    </li>
+{% endfor %}
+</ul>

@@ -1,0 +1,19 @@
+{% load menu_tags %}
+{% if menu_items %}
+    <h2>{{ menu_slug }}</h2>
+    <ul>
+    {% for item in menu_items %}
+        {% if not item.parent %}
+            <li>
+                <a href="{% if item.named_url %}{% else %}{{ item.url }}{% endif %}">
+                    {{ item.title }}
+                </a>
+                {% if item.get_children %}
+                    {% include 'menu_app/menu_item.html' with items=item.get_children %}
+                {% endif %}
+            </li>
+        {% endif %}
+    {% endfor %}
+    </ul>
+{% endif %}
+
